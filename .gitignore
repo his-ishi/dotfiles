@@ -1,0 +1,11 @@
+*.tmp
+*.swp
+tags
+.viminfo
+id_rsa
+github_rsa
+.cache
+*/bundle/
+*/plugged/
+.ssh/
+.netrwhist
