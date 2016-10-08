@@ -1,0 +1,5 @@
+set reference-format = (branch) <tag>
+set line-graphics = default
+set main-view = id date author commit-title
+set main-view-commit-title = graph:v2
+set main-view-commit-title = refs:true
