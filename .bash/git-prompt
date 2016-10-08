@@ -1,0 +1,57 @@
+parse_git_branch () {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+parse_git_tag () {
+    git describe --tags 2> /dev/null
+}
+
+if_modified () {
+    git status -uall 2> /dev/null | grep -E "(modified|Untracked)" > /dev/null 2>&1
+}
+if_pushed () {
+    git log origin/$1..$1 2> /dev/null | grep -E "commit" > /dev/null 2>&1
+}
+
+parse_git_branch_or_tag() {
+    local BRANCH="$(parse_git_branch)"
+    if [ "$BRANCH" = "" ]; then
+        return 0;
+    fi
+
+    local OUT="($BRANCH)"
+    if [ "$OUT" == " ((no branch))" ]; then
+        OUT="($(parse_git_tag))";
+    fi
+
+    if_modified
+    if [ $? -eq 0 ] ; then
+        local MOD_MARK="*"
+        OUT=$OUT$MOD_MARK
+    fi
+
+    if_pushed $BRANCH
+    if [ $? -eq 0 ] ; then
+        local NON_PUSH_MARK="  NOT YET PUSHED!!!"
+        OUT=$OUT$NON_PUSH_MARK
+    fi
+    echo $OUT
+}
+
+calc_color_hash() {
+#  local x=$1
+  local x=`hostname`
+  local sum=0
+  local len=${#x}
+  for i in $(seq 0 $len) ; do 
+    sum=$(($sum + $(printf "%d" \'${x:i-1:1})*$i));
+  done
+  echo $((($sum%6)+31))
+}
+
+addcolor() {
+  local colo=$(calc_color_hash $1)
+  echo -e "\e[1;$colo$1\e[0m"
+}
+
+

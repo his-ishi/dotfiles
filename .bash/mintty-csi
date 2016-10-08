@@ -1,0 +1,10 @@
+#echo this is mintty-csi
+
+sjis() {
+  echo -ne "\e]701;SJIS"
+}
+
+utf() {
+  echo -ne "\e]701;UTF-8"
+}
+
