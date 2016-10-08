@@ -1,6 +1,5 @@
 *.tmp
 *.swp
-tags
 .viminfo
 id_rsa
 github_rsa
@@ -9,3 +8,9 @@ github_rsa
 */plugged/
 .ssh/
 .netrwhist
+tags
+GTAGS
+GRTAGS
+GSYMS
+GPATH
+
