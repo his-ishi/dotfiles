@@ -295,6 +295,7 @@ Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'vim-scripts/a.vim'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 let g:lightline = {
@@ -439,4 +440,7 @@ let &t_te.="\e[<0t\e[<s"
 set ttimeoutlen=100
 
 set rtp+=~/go/src/github.com/nsf/gocode/vim
+
+nnoremap tn :tabnext<cr>
+nnoremap tp :tabprevious<cr>
 

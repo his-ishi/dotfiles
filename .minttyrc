@@ -1,6 +1,6 @@
 BoldAsFont=no
 Font=MeiryoKe_Console
-Transparency=low
+Transparency=off
 OpaqueWhenFocused=no
 Columns=140
 Rows=65
@@ -26,6 +26,6 @@ BoldBlue=107,155,219
 BoldMagenta=237,157,185
 BoldCyan=64,255,255
 BoldWhite=255,255,25
-BackgroundColour=0,38,38
+BackgroundColour=1,0,38
 IMECursorColour=255,117,0
 BellType=0
