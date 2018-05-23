@@ -288,6 +288,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'thinca/vim-quickrun'
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/calendar.vim'
 Plug 'fatih/vim-go'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'plasticboy/vim-markdown'
@@ -296,6 +297,8 @@ Plug 'tyru/open-browser.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'vim-scripts/a.vim'
 Plug 'davidhalter/jedi-vim'
+Plug 'tpope/vim-dispatch'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 let g:lightline = {
