@@ -188,7 +188,7 @@ augroup vimrc
   autocmd BufWritePre my.changelog,priv.txt let &bex = '-' . strftime("%Y%b%d-%H") . '~'
 
   " msys上でQuickRunの結果がSJISで返ってきたときに改行文字が出ないようにする
-  autocmd BufReadCmd \[quickrun\ output\] set ff=dos
+  " autocmd BufReadCmd \[quickrun\ output\] set ff=dos
 
 augroup END
 
