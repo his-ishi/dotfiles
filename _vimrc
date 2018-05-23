@@ -217,6 +217,11 @@ let g:quickrun_config['cs'] = {
     \ 'tempfile': '{tempname()}.cs',
     \ }
 
+let g:quickrun_config['vb'] = {
+    \ 'command' : 'cscript',
+    \ "hook/output_encode/encoding" : "sjis"
+    \ }
+
 let g:hybrid_use_Xresources = 1
 "colorscheme hybrid
 
