@@ -12,7 +12,7 @@ if has('win32')
   " Windows用
   "set guifont=BDF_M+:h9:cSHIFTJIS
   "set guifont=MeiryoKe_Gothic:h11:cSHIFTJIS
-  set guifont=MeiryoKe_Console:h11:cSHIFTJIS
+  set guifont=MeiryoKe_Console:h11
   "set guifont=MS_Gothic:h12:cSHIFTJIS
   "set guifont=MS_Mincho:h12:cSHIFTJIS
   " 行間隔の設定
