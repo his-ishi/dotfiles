@@ -304,6 +304,8 @@ Plug 'vim-scripts/a.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/nerdtree'
+Plug 'gregsexton/VimCalc'
+Plug 'yegappan/grep'
 call plug#end()
 
 let g:lightline = {
