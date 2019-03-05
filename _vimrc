@@ -9,14 +9,12 @@ endfunction
 
 set fileencodings=utf-8,cp932,latin1
 set fileformats=unix,dos
-set helplang=ja,en
 
 syntax on
 colorscheme koehler
 
-set shell=bash
-"set shellquote='"'
-set shellquote=
+set shell=c:/msys64/usr/bin/bash
+set shellquote="\""
 set shellslash                                  " /をディレクトリの区切りとして使えるようにする
 set shellredir=>%s\ 2>&1                        " デフォルトは >%s 2>&1
 set autoindent                                  " オートインデントON
@@ -70,6 +68,8 @@ let format_allow_over_tw = 1	" ぶら下り可能幅" 日本語整形スクリ�
 "set list
 
 set noshowmode
+
+set helplang=ja,en
 
 set completeopt=menuone
 
@@ -282,19 +282,31 @@ if filereadable($VIM . '/vimrc') && filereadable($VIM . '/ViMrC')
   set tags=./tags,tags
 endif
 
-let $PATH='\usr\local\bin;\mingw\bin;\usr\bin;\bin;' . $PATH
+let $PATH='c:\msys64\usr\bin:' . '\usr\local\bin:\mingw\bin:\usr\bin:\bin:' . $PATH
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'thinca/vim-quickrun'
-Plug 'itchyny/lightline.vim'
-Plug 'fatih/vim-go'
-Plug 'vim-jp/vimdoc-ja'
-Plug 'plasticboy/vim-markdown'
-Plug 'kannokanno/previm'
-Plug 'tyru/open-browser.vim'
-Plug 'aklt/plantuml-syntax'
+Plug 'ssh://github.com/Shougo/vimproc.vim', {'do': 'make'}
+Plug 'ssh://github.com/thinca/vim-quickrun'
+Plug 'itchyny/calendar.vim'
+Plug 'ssh://github.com/itchyny/lightline.vim'
+Plug 'ssh://github.com/fatih/vim-go'
+Plug 'ssh://github.com/google/vim-ft-go'
+Plug 'ssh://github.com/vim-jp/vim-go-extra'
+Plug 'ssh://github.com/vim-jp/vimdoc-ja'
+Plug 'ssh://github.com/plasticboy/vim-markdown'
+Plug 'ssh://github.com/kannokanno/previm'
+Plug 'ssh://github.com/tyru/open-browser.vim'
+Plug 'ssh://github.com/aklt/plantuml-syntax'
+Plug 'ssh://github.com/vim-scripts/a.vim'
+Plug 'ssh://github.com/jphustman/Align.vim'
+Plug 'ssh://github.com/vim-scripts/vcscommand.vim'
+Plug 'ssh://github.com/vim-scripts/ccase.vim'
+Plug 'ssh://github.com/tpope/vim-surround'
+Plug 'ssh://github.com/docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'ssh://github.com/ryanoasis/vim-devicons'
+Plug 'git@github.com:scrooloose/nerdtree.git'
+
 call plug#end()
 
 let g:lightline = {
@@ -429,11 +441,24 @@ function! MyCharCode()
   return "'". char ."' ". nr
 endfunction
 
-" " control IME over ssh (Tera Term specific)
+" control IME over ssh (Tera Term specific)
 " let &t_SI.="\ePtmux;\e\e[<r\e\\"
 " let &t_EI.="\ePtmux;\e\e[<s\e\\\ePtmux;\e\e[<0t\e\\"
 " let &t_te.="\ePtmux;\e\e[<0t\e\\\ePtmux;\e\e[<s\e\\"
+" let &t_SI.="\e[<r"
+" let &t_EI.="\e[<s\e[<0t"
+" let &t_te.="\e[<0t\e[<s"
 " set ttimeoutlen=100
 
 set rtp+=~/go/src/github.com/nsf/gocode/vim
+
+" vimdiffの色設定
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
