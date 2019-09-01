@@ -306,6 +306,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/nerdtree'
 Plug 'gregsexton/VimCalc'
 Plug 'yegappan/grep'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 call plug#end()
 
 let g:lightline = {

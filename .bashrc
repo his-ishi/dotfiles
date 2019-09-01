@@ -34,6 +34,9 @@ GOPATH=$HOME/go
 export GOROOT GOPATH
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
+# rust setting
+export PATH=$HOME/.cargo/bin:$PATH
+
 alias grep='grep --color=auto'
 
 # check the window size after each command and, if necessary,
