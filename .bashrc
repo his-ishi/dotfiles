@@ -37,6 +37,9 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 # rust setting
 export PATH=$HOME/.cargo/bin:$PATH
 
+# texlive setting
+export PATH=/c/texlive/2019/bin/win32:$PATH
+
 alias grep='grep --color=auto'
 
 # check the window size after each command and, if necessary,
