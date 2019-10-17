@@ -32,13 +32,18 @@ export MSYS=winsymlinks:nativestrict
 GOROOT=/c/Go
 GOPATH=$HOME/go
 export GOROOT GOPATH
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
-# rust setting
-export PATH=$HOME/.cargo/bin:$PATH
+# PRECEEDING_PATH
+PRECEEDING_PATH="$GOROOT/bin:$GOPATH/bin"
+PRECEEDING_PATH=$PRECEEDING_PATH:"$HOME/.cargo/bin"
+PRECEEDING_PATH=$PRECEEDING_PATH:"/c/texlive/2019/bin/win32"
+PRECEEDING_PATH=$PRECEEDING_PATH:"/c/Python37/Scripts:/c/Python37"
 
-# texlive setting
-export PATH=/c/texlive/2019/bin/win32:$PATH
+# FOLLOWING PATH
+FOLLOWING_PATH="/c/Program Files/Pandoc"
+FOLLOWING_PATH=$FOLLOWING_PATH:"/C/Program Files/Microsoft VS Code/bin"
+
+export PATH=$PRECEEDING_PATH:$PATH:$FOLLOWING_PATH
 
 alias grep='grep --color=auto'
 
