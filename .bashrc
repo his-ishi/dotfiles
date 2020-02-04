@@ -115,7 +115,7 @@ fi
 # some more ls aliases
 #alias clear=clsb
 alias vi="TERM=xterm-256color vim"
-alias ls="ls --color=auto --show-control-chars"
+alias ls='ls --color=auto --show-control-chars -I "NTUSER.DAT*"'
 alias lfa='ls --color=auto -lFa'
 alias ll='ls --color=auto -alF'
 alias la='ls --color=auto -A'
