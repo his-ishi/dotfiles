@@ -190,6 +190,8 @@ augroup vimrc
   " msys上でQuickRunの結果がSJISで返ってきたときに改行文字が出ないようにする
   " autocmd BufReadCmd \[quickrun\ output\] set ff=dos
 
+  " autocmd BufNewFile,BufRead {$HOME/Dropbox/*} set noswapfile | set directory=$TEMP,c:\tmp,c:\temp | set swapfile
+
 augroup END
 
 " コマンドモードで代入を示す正規表現を呼び出す
@@ -297,11 +299,8 @@ Plug 'itchyny/calendar.vim'
 Plug 'fatih/vim-go'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'plasticboy/vim-markdown'
-Plug 'kannokanno/previm'
-Plug 'tyru/open-browser.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'vim-scripts/a.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/nerdtree'
 Plug 'gregsexton/VimCalc'
